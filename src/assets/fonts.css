@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Noto-Regular';
+  src: url('./fonts/NotoSerifDisplay-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Noto-Bold';
+  src: url('./fonts/NotoSerifDisplay-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Nympha-Light';
+  src: url('./fonts/NymphaTrial-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Nympha-Regular';
+  src: url('./fonts/NymphaTrial-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Nympha-RegularItalic';
+  src: url('./fonts/NymphaTrial-RegularItalic.ttf');
+}
+
+@font-face {
+  font-family: 'Nympha-LightItalic';
+  src: url('./fonts/NymphaTrial-LightItalic.ttf');
+}
