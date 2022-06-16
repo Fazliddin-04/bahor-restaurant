@@ -1689,3 +1689,40 @@ h2.animated span:last-child {
     max-width: 440px;
   }
 }
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.loading-text {
+  font-size: 20rem;
+  color: rgba(0, 0, 0, 0.109);
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(
+    transparent 50%,
+    var(--secondary-color) 50%
+  );
+  background-position: center;
+  background-size: 1000px 1000px;
+  animation: loading 5s forwards;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 800px 800px;
+  }
+  100% {
+    background-position: 500px 500px;
+  }
+}

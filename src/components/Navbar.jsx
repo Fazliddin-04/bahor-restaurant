@@ -1,14 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate, Link, useLocation } from 'react-router-dom'
+import Loading from './Loading'
 
 function Navbar() {
   const [showDrawer, setShowDrawer] = useState('close')
   const [disabledLinks, setDisabledLinks] = useState(false)
   const [hoveredLink, setHoveredLink] = useState(0)
+  const [playAnimation, setPlayAnimation] = useState(false)
 
   const navigate = useNavigate()
   const location = useLocation()
+  useEffect(() => {
+    const onPageLoad = () => {
+      setTimeout(() => {
+        setPlayAnimation(true)
+      }, 4000)
+    }
 
+    // Check if the page has already loaded
+    if (document.readyState === 'complete') {
+      onPageLoad()
+    } else {
+      window.addEventListener('load', onPageLoad)
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener('load', onPageLoad)
+    }
+  }, [])
   const closeNavList = () => {
     setShowDrawer('closing')
 
@@ -18,6 +35,7 @@ function Navbar() {
   }
   return (
     <>
+      {!playAnimation && <Loading />}
       <div className="container">
         <div className="navbar">
           <div>

@@ -18,6 +18,8 @@ function Content() {
     if (location !== displayLocation) setTransistionStage('fadeOut')
   }, [location, displayLocation])
 
+
+
   return (
     <div
       className={`content ${transitionStage}`}
