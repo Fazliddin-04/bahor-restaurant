@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import MouseContextProvider from '../context/mouseContext'
 import TextCursor from '../components/TextCursor'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 function Reservation() {
   const [mous, setMous] = useState(false)
@@ -28,6 +29,18 @@ function Reservation() {
 
   const onSubmit = (e) => {
     e.preventDefault()
+    const resolveAfter3Sec = new Promise((resolve) => setTimeout(resolve, 3000))
+    toast.promise(
+      resolveAfter3Sec,
+      {
+        pending: 'Reservation is pending',
+        success: 'Reservation sent',
+        error: 'Could not be sent',
+      },
+      {
+        position: toast.POSITION.BOTTOM_CENTER,
+      }
+    )
     navigate('/')
   }
   return (
