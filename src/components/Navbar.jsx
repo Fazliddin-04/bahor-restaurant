@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate, Link, useLocation } from 'react-router-dom'
-import Loading from './Loading'
 
 function Navbar() {
   const [showDrawer, setShowDrawer] = useState('close')
@@ -14,7 +13,7 @@ function Navbar() {
     const onPageLoad = () => {
       setTimeout(() => {
         setPlayAnimation(true)
-      }, 4000)
+      }, 3500)
     }
 
     // Check if the page has already loaded
@@ -33,9 +32,13 @@ function Navbar() {
       setShowDrawer('close')
     }, 1200)
   }
+
+  if (!playAnimation) {
+    return <></>
+  }
+
   return (
     <>
-      {!playAnimation && <Loading />}
       <div className="container">
         <div className="navbar">
           <div>

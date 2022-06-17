@@ -7,18 +7,39 @@ import Home from '../pages/Home'
 import HoursNLocation from '../pages/HoursNLocation'
 import Menu from '../pages/Menu'
 import Reservation from '../pages/Reservation'
+import Loading from './Loading'
 
 function Content() {
   const location = useLocation()
 
   const [displayLocation, setDisplayLocation] = useState(location)
   const [transitionStage, setTransistionStage] = useState('fadeIn')
+  const [playAnimation, setPlayAnimation] = useState(false)
+
+  useEffect(() => {
+    const onPageLoad = () => {
+      setTimeout(() => {
+        setPlayAnimation(true)
+      }, 3500)
+    }
+
+    // Check if the page has already loaded
+    if (document.readyState === 'complete') {
+      onPageLoad()
+    } else {
+      window.addEventListener('load', onPageLoad)
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener('load', onPageLoad)
+    }
+  }, [])
 
   useEffect(() => {
     if (location !== displayLocation) setTransistionStage('fadeOut')
   }, [location, displayLocation])
 
-
+  if (!playAnimation) {
+    return <Loading />
+  }
 
   return (
     <div

@@ -2,8 +2,8 @@ import React from 'react'
 
 function Loading() {
   return (
-    <div class="loading">
-      <span class="loading-text">
+    <div className="loading">
+      <span className="loading-text">
         B
       </span>
     </div>

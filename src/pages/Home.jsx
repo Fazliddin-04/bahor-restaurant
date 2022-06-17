@@ -15,9 +15,6 @@ import DotRing from '../components/DotRing'
 import LazyShow from '../components/LazyShow'
 import TextCursor from '../components/TextCursor'
 
-// video
-import cooking from '../assets/video/cookin.mp4'
-
 function Home() {
   const [play, setPlay] = useState(true)
   const ref = useRef(null)
@@ -32,78 +29,6 @@ function Home() {
       setPlay(false)
     }
   }
-
-  // const onWheel = () => {
-  //   window.addEventListener('scroll', function () {
-  //     console.log(
-  //       this.scrollY,
-  //       fade2.current.offsetTop - fade2.current.clientHeight * 2
-  //     )
-  //     if (
-  //       this.scrollY >
-  //       fade2.current.offsetTop - fade2.current.clientHeight * 2
-  //     ) {
-  //       this.setTimeout(() => {
-  //         fade2.current.style.transition = '1s ease'
-  //         fade2.current.style.opacity = '1'
-  //       }, 500)
-  //     }
-  //     if (
-  //       this.scrollY >
-  //       fade.current.offsetTop - fade.current.clientHeight * 2
-  //     ) {
-  //       this.setTimeout(() => {
-  //         fade.current.style.transition = '1s ease'
-  //         fade.current.style.opacity = '1'
-  //       }, 500)
-  //     }
-  //     if (
-  //       this.scrollY >
-  //       imgfade1.current.offsetTop + imgfade1.current.clientHeight * 6
-  //     ) {
-  //       this.setTimeout(() => {
-  //         imgfade1.current.style.transition = '1s ease'
-  //         imgfade1.current.style.opacity = '1'
-  //       }, 500)
-  //     }
-  //     if (
-  //       this.scrollY >
-  //       imgfade2.current.offsetTop - imgfade2.current.clientHeight * 2
-  //     ) {
-  //       this.setTimeout(() => {
-  //         imgfade2.current.style.transition = '1s ease'
-  //         imgfade2.current.style.opacity = '1'
-  //       }, 500)
-  //     }
-  //     if (
-  //       this.scrollY >
-  //       imgfade3.current.offsetTop - imgfade3.current.clientHeight * 2
-  //     ) {
-  //       this.setTimeout(() => {
-  //         imgfade3.current.style.transition = '1s ease'
-  //         imgfade3.current.style.opacity = '1'
-  //       }, 500)
-  //     }
-  //     if (
-  //       this.scrollY >
-  //       mottoRef.current.offsetTop - mottoRef.current.clientHeight * 2
-  //     ) {
-  //       this.setTimeout(() => {
-  //         mottoRef.current.style.transition = '1s ease'
-  //         mottoRef.current.style.opacity = '1'
-  //       }, 500)
-  //     }
-  //     if (
-  //       this.scrollY >
-  //       imgfade4.current.offsetTop - imgfade4.current.clientHeight * 2
-  //     ) {
-  //       this.setTimeout(() => {
-  //         imgfade4.current.style.transition = '1s ease'
-  //         imgfade4.current.style.opacity = '1'
-  //       }, 500)
-  //     }
-  //   })
-  // }
 
   return (
     <MouseContextProvider>
@@ -356,7 +281,12 @@ function Home() {
       <div className="video-play" onClick={() => playVideo()}>
         <DotRing playOrPause={play} />
         <video muted loop autoPlay ref={ref}>
-          <source src={cooking} type="video/mp4" />
+          <source
+            src={
+              'https://firebasestorage.googleapis.com/v0/b/bahor-restoran.appspot.com/o/cookin.mp4?alt=media&token=f0580e02-322f-40c6-ab91-a1d8e68e9ed4'
+            }
+            type="video/mp4"
+          />
           Your browser doesn't support HTML video
         </video>
       </div>
