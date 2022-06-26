@@ -1709,7 +1709,7 @@ h2.animated span:last-child {
   );
   background-position: center;
   background-size: 1000px 1000px;
-  animation: loading 4s forwards;
+  animation: loading 4.5s forwards;
 }
 
 @keyframes loading {

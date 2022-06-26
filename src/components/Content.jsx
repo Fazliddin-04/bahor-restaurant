@@ -20,7 +20,7 @@ function Content() {
     const onPageLoad = () => {
       setTimeout(() => {
         setPlayAnimation(true)
-      }, 3500)
+      }, 5000)
     }
 
     // Check if the page has already loaded
